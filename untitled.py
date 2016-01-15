@@ -1,4 +1,5 @@
 #!/usr/bin/python
+#author Tom Erickson
 import csv
 from StringIO import StringIO
 import re
