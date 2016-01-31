@@ -25,14 +25,14 @@ def first_file(open_csv):
         row_value = raw_input('what is the row value you want to look for? Caps matter \n')
         column_value = raw_input('what is the column_value you want to look for? Caps matter \n')
         ie_columns = [i for i, c in enumerate(header) if column_value in c]
-        cell_value = raw_input('what text would you like to put in the cells? \n')
+        #cell_value = raw_input('what text would you like to put in the cells? \n')
         for row in reader:
         	row_is_a_js_row = row_value in row[1] #this is the only hard coded value in the program that would need to be changed depending on the csv, I may try to add it in such a way that it asks where your value is
         	#new_row = map(lambda (i, c): 'n/a' if i in ie_columns else c, enumerate(row))
          	new_row = []
          	for column_index, cell in enumerate(row):
          		if (column_index in ie_columns and row_is_a_js_row):
-         			new_row.append(cell_value)
+         			new_row.append('N/A')
          		else:
          		    new_row.append(cell)
                 new_file.append(tuple(new_row))
