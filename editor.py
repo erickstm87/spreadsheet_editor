@@ -44,7 +44,7 @@ def first_file(open_csv):
         	print ",".join(row)
         sys.stdout = orig_stdout
         f.close()
-        os.rename (output_file, open_csv)
+        os.rename (output_file, open_csv) #do this so it can be fed continuously into the loop 
         global start_over
         start_over = raw_input('are there more cells you would like to fill in? Type out yes fully otherwise just hit enter \n')
         if (start_over != 'yes'):
@@ -53,7 +53,7 @@ def first_file(open_csv):
 
 def main():
     open_csv = raw_input('whats your filename? No need to include the extension, but make sure its a csv file \n') + '.csv'
-    shutil.copyfile(open_csv,'whatever.csv')
+    shutil.copyfile(open_csv,'whatever.csv') #this is to stash the original file which i'll switch back later
     cut_out = raw_input('Do you have a blank first line you would like to cut out? Type out yes fully if you do \n')
     if (cut_out == 'yes'):
         cutter(open_csv) # ignore first line of csv
